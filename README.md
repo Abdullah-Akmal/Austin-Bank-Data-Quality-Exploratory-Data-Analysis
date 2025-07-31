@@ -134,9 +134,6 @@ The project delivers a clean and analysis-ready dataset supported by:
 
 ---
 
-## License
-
-This project is for academic and educational purposes. Licensing terms to be added based on usage.
 
 ---
 
