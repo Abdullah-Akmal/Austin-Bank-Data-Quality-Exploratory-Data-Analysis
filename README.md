@@ -90,5 +90,4 @@ This project delivers:
 
 ---
 
-## Folder Structure (Suggested)
 
