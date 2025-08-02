@@ -1,143 +1,94 @@
 # Austin-Bank-Data-Quality-Exploratory-Data-Analysis
 
-## Overview
-
-This project analyzes a banking dataset to identify data quality issues and extract actionable insights into customer volume and deposit trends across cities, service categories, and time periods. The objective is to support data-driven decision-making for optimizing banking operations and enhancing service offerings.
-
----
-
-## Table of Contents
-
-- [Problem Statement](#problem-statement)
-- [Tools and Technologies](#tools-and-technologies)
-- [Process Breakdown](#process-breakdown)
-  - [Data Cleaning](#data-cleaning)
-  - [Feature Engineering](#feature-engineering)
-  - [Data Analysis and Visualization](#data-analysis-and-visualization)
-- [Key Findings](#key-findings)
-- [Business Impact](#business-impact)
-- [Outcome](#outcome)
-- [Highlights](#highlights)
-
----
-
 ## Problem Statement
 
-Analyze a banking dataset to:
-
-- Identify and correct data quality issues.
-- Uncover trends in customer volume and deposit value by city, service category, and time period.
-- Enable strategic, data-driven decisions for bank operations and service development.
+Banks often face challenges in leveraging operational data due to quality issues such as missing values, inconsistent formats, and erroneous entries. These issues hinder the ability to generate accurate insights for performance monitoring and strategic planning. This project addresses these challenges by analyzing a banking dataset to identify and resolve data quality problems while uncovering trends in customer volume and deposit patterns across cities, service categories, and time periods. The goal is to transform raw data into a clean, analysis-ready format and generate actionable insights to support data-driven decisions, optimize banking operations, and improve service delivery.
 
 ---
 
-## Tools and Technologies
+## Tools Used
 
-- **Language**: Python
-- **Libraries**:
-  - pandas, numpy – data manipulation and cleaning
-  - matplotlib, seaborn – data visualization
-- **Environment**: Jupyter Notebook
+- Python: pandas, numpy, matplotlib, seaborn
+- Jupyter Notebook
 
 ---
 
 ## Process Breakdown
 
-### Data Cleaning
+### Data Quality Issues & Cleaning
 
-- **Missing Values**:  
-  Imputed 3 missing values in `Customer Volume` and `Deposit Value` using median.
-
-- **Negative Values**:  
-  Replaced 3 negative numeric entries with column median after converting to NaN.
-
-- **Date Inconsistencies**:  
-  Corrected invalid year `2073` to `2023` and standardized all date formats.
-
-- **Duplicate Records**:  
-  Verified dataset contained no duplicate entries.
-
-- **Categorical Standardization**:
-  - `Bond%%%% savings` → `Bonds savings accounts`
-  - `Cardi££££££` → `Cardiff`
+- Missing Values: Imputed 3 missing values in `Customer Volume/Deposit Value` using median imputation.
+- Negative Values: Replaced 3 negative numeric values with median after converting them to NaN.
+- Inconsistent Dates: Corrected invalid years (2073 → 2023) and standardized date formats.
+- Duplicates: Verified zero duplicate entries.
+- Categorical Standardization:
+  - Example: `Bond%%%% savings → Bonds savings accounts`
+  - Example: `Cardi££££££ → Cardiff`
 
 ---
 
 ### Feature Engineering
 
-Created new time-based features:
-
-- `Date` – parsed from original fields
-- `Quarter`
-- `Year/Month`
+- Created new fields: `Date` (datetime), `Quarter`, `Year/Month` for time-based analysis.
 
 ---
 
-### Data Analysis and Visualization
+## Data Analysis & Visualization
 
-- **Monthly Trends**:
-  - Aggregated total customer volume and deposit value by month-year (Table 1).
+### Monthly Trends
 
-- **City Benchmarks**:
-  - Quarterly average customer/deposit trends across Oxford, Edinburgh, and Cardiff (Table 2).
+- Aggregated total Customer Volume and Deposit Value by Month-Year.
+- Table 1: Monthly trends overview.
 
-- **Service Category Performance**:
-  - Quarterly performance for service types like `Current accounts` and `Bonds savings accounts` (Table 3).
+### City Benchmarks
 
----
+- Compared quarterly averages for cities: Oxford, Edinburgh, Cardiff.
+- Table 2: City-wise performance metrics.
 
-## Key Findings
+### Service Category Performance
 
-- **Top-performing category**:  
-  `Current accounts` with an average deposit of **£668K**.
-
-- **Lowest customer volume**:  
-  `Children’s savings` with an average of **37.8K** customers.
+- Evaluated quarterly performance across services like Current accounts, Bonds savings, etc.
+- Table 3: Category-wise trends and benchmarks.
 
 ---
 
-## Business Impact
+## EDA Summary
 
-- **Oxford** dominated deposits, peaking at **£7.77M in Q3 2023**.
+| Metric               | Value                                 |
+|----------------------|----------------------------------------|
+| Top-Performing       | Current accounts (avg. deposit: £668K) |
+| Lowest Volume        | Children’s savings (avg. volume: 37.8K)|
+| Best City Performance| Oxford (peaked £7.77M in Q3 2023)      |
+| Category Contribution| Current accounts: 56% of total deposits (£72.1M) |
 
-- **Current accounts** contributed to **56% of total deposits (£72.1M)**.
+---
 
-- **15%+ of records** corrected through data cleaning, ensuring reliable analysis.
+## Impact & Insights
 
-- **Quarterly dashboards** developed to guide regional resource allocation and product strategy.
+- Resolved over 15% of data entry errors, enabling reliable trend analysis.
+- Developed quarterly dashboards to support data-driven planning.
+- Identified high-performing areas to scale (Current accounts) and low performers to optimize (Children’s savings).
 
 ---
 
 ## Outcome
 
-The project delivers a clean and analysis-ready dataset supported by:
-
-- Modular data cleaning and transformation pipeline.
-- Exploratory data analysis for performance tracking.
-- Insightful summaries to assist with service scaling and operational decisions.
-
----
-
-## Highlights
-
-- **Automated Data Cleaning**:  
-  Standardized inconsistent entries, handled missing and negative values.
-
-- **Comparative Benchmarking**:  
-  Leveraged `groupby()` and `agg()` for city and service performance comparisons.
-
-- **Reusable Code**:  
-  Modular functions for scalability across similar datasets.
-
-- **Visualization-Ready**:  
-  Charts prepared with seaborn for trend analysis (visuals excluded from README).
+This project delivers:
+- A cleaned, structured dataset ready for strategic planning.
+- Modular Python functions for handling missing and negative values.
+- GroupBy aggregation pipelines for benchmarking.
+- Seaborn visualizations setup (charts executable in Jupyter Notebook).
 
 ---
 
+## Key Highlights
+
+- Data Quality: Automated correction of dates, negatives, and label inconsistencies.
+- Benchmarking: Comparative analysis using `groupby()` and `.agg()`.
+- Scalability: Modular functions for data wrangling and preparation.
+- Visualization Ready: Configured Seaborn charts for trends and patterns.
 
 ---
 
-## Contact
-
-For feedback or collaboration, please reach out via GitHub or email.
+## Folder Structure (Suggested)
 
